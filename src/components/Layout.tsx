@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-// import Nav from './Nav';
+import Nav from './Nav';
 
 type LayoutProps = {
   children: ReactNode;
@@ -8,7 +8,7 @@ type LayoutProps = {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      {/* <Nav /> */}
+      <Nav />
 
       <div className=' '></div>
       <div className=''></div>
