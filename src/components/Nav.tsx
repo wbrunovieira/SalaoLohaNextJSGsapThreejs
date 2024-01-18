@@ -1,6 +1,14 @@
+import Image from 'next/image';
 import React from 'react';
 
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+
 const Nav: React.FC = () => {
+  const router = useRouter();
+
+  const isActive = (pathname: string) => router.pathname === pathname;
+
   return (
     <nav className='bg-white shadow-lg relative '>
       <div className='max-w-6xl mx-auto px-4'>
@@ -27,60 +35,87 @@ const Nav: React.FC = () => {
 
           <div className='flex space-x-7'>
             <div>
-              <a href='#' className='flex items-center py-4 px-2'>
-                <img
-                  src='svg/logo-salao-loha-agrupado-nav.svg'
-                  alt='Logotipo Salão Loha'
-                  className=' mr-2'
-                />
-                <div className='flex flex-col'>
-                  <span className='font-semibold text-gray-600 font-sans text-lg/4'>
-                    Salão Loha
-                  </span>
-                  <span className='font-semibold text-gray-500 font-sans text-sm'>
-                    Estética e Beleza
-                  </span>
-                </div>
-              </a>
+              <Link href='/' legacyBehavior>
+                <a className='flex items-center py-4 px-2'>
+                  <Image
+                    src='/svg/logo-salao-loha-agrupado-nav.svg'
+                    alt='Logotipo Salão Loha'
+                    className=' mr-2'
+                    width={100}
+                    height={50}
+                  />
+                  <div className='flex flex-col'>
+                    <span className='font-semibold text-gray-600 font-sans text-lg/4'>
+                      Salão Loha
+                    </span>
+                    <span className='font-semibold text-gray-500 font-sans text-sm'>
+                      Estética e Beleza
+                    </span>
+                  </div>
+                </a>
+              </Link>
             </div>
           </div>
 
           <div className='hidden md:flex items-center space-x-1 z-20 menu'>
-            <a
-              href='/index.html'
-              data-barba='link'
-              className='py-4 px-2 text-gray-500 font-sans font-semibold border-b-2  duration-100 ease-in-out hover:border-cor-primaria-light hover:transform hover:scale-105'
-            >
-              Início
-            </a>
-            <a
-              href='/src/pages/servicos.html'
-              data-barba='link'
-              className='py-4 px-2 text-gray-500 font-sans font-semibold border-b-2 border-transparent hover:border-cor-primaria-light hover:transform scale-110 duration-1000 ease-in-out'
-            >
-              Serviços
-            </a>
-            <a
-              href='/src/pages/destaque.html'
-              data-barba='link'
-              className='py-4 px-2 text-gray-500 font-sans font-semibold border-b-2 border-transparent hover:border-cor-primaria-light hover:transform hover:scale-105 duration-1000 ease-in-out'
-            >
-              Destaque
-            </a>
-            <a
-              href='/src/pages/portfolio.html'
-              data-barba='link'
-              className='py-4 px-2 text-gray-500 font-sans font-semibold border-b-2 border-transparent hover:border-cor-primaria-light hover:transform hover:scale-105 duration-1000 ease-in-out'
-            >
-              Portfólio
-            </a>
-            <a
-              href='/src/pages/contato.html'
-              data-barba='link'
-              className='py-4 px-2 text-gray-500 font-sans font-semibold border-b-2 border-transparent hover:border-cor-primaria-light hover:transform hover:scale-105 duration-1000 ease-in-out'
-            >
-              Contato
-            </a>
+            <Link href='/' legacyBehavior>
+              <a
+                className={`py-4 px-2 text-gray-500 font-sans font-semibold ${
+                  isActive('/')
+                    ? 'border-b-2 border-cor-primaria-light'
+                    : 'border-b-2 border-transparent'
+                }`}
+              >
+                Início
+              </a>
+            </Link>
+
+            <Link href='/servicos' legacyBehavior>
+              <a
+                className={`py-4 px-2 text-gray-500 font-sans font-semibold ${
+                  isActive('/servicos')
+                    ? 'border-b-2 border-cor-primaria-light'
+                    : 'border-b-2 border-transparent'
+                }`}
+              >
+                Serviços
+              </a>
+            </Link>
+
+            <Link href='/destaque' legacyBehavior>
+              <a
+                className={`py-4 px-2 text-gray-500 font-sans font-semibold ${
+                  isActive('/destaque')
+                    ? 'border-b-2 border-cor-primaria-light'
+                    : 'border-b-2 border-transparent'
+                }`}
+              >
+                Destaque
+              </a>
+            </Link>
+
+            <Link href='/portfolio' legacyBehavior>
+              <a
+                className={`py-4 px-2 text-gray-500 font-sans font-semibold ${
+                  isActive('/portfolio')
+                    ? 'border-b-2 border-cor-primaria-light'
+                    : 'border-b-2 border-transparent'
+                }`}
+              >
+                Portfólio
+              </a>
+            </Link>
+            <Link href='/contato' legacyBehavior>
+              <a
+                className={`py-4 px-2 text-gray-500 font-sans font-semibold ${
+                  isActive('/contato')
+                    ? 'border-b-2 border-cor-primaria-light'
+                    : 'border-b-2 border-transparent'
+                }`}
+              >
+                Contato
+              </a>
+            </Link>
           </div>
         </div>
       </div>

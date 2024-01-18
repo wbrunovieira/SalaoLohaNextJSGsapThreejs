@@ -16,6 +16,9 @@ module.exports = {
         'cor-texto': '#323232',
         'cor-complementar': '#B48E4D',
       },
+      borderColor: {
+        'cor-primaria-light': '#ed3237',
+      },
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
       },
