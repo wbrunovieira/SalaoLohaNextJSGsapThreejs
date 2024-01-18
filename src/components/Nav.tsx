@@ -3,11 +3,25 @@ import React from 'react';
 
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useRef, useEffect } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 const Nav: React.FC = () => {
   const router = useRouter();
 
-  const isActive = (pathname: string) => router.pathname === pathname;
+  const isActive = (pathname: string) => {
+    console.log('Rota Atual:', router.pathname, 'Rota Verificada:', pathname);
+    return router.pathname === pathname;
+  };
+
+  const homeLinkRef = useRef<HTMLAnchorElement>(null);
+  const servicosLinkRef = useRef<HTMLAnchorElement>(null);
+  const contatoLinkRef = useRef<HTMLAnchorElement>(null);
+  const destaqueLinkRef = useRef<HTMLAnchorElement>(null);
+  const portfolioLinkRef = useRef<HTMLAnchorElement>(null);
+
+  const { contextSafe } = useGSAP({});
 
   return (
     <nav className='bg-white shadow-lg relative '>
@@ -60,7 +74,8 @@ const Nav: React.FC = () => {
           <div className='hidden md:flex items-center space-x-1 z-20 menu'>
             <Link href='/' legacyBehavior>
               <a
-                className={`py-4 px-2 text-gray-500 font-sans font-semibold ${
+                ref={homeLinkRef}
+                className={`py-4 px-2 text-gray-500 font-sans font-semibold link ${
                   isActive('/')
                     ? 'border-b-2 border-cor-primaria-light'
                     : 'border-b-2 border-transparent'
@@ -72,7 +87,8 @@ const Nav: React.FC = () => {
 
             <Link href='/servicos' legacyBehavior>
               <a
-                className={`py-4 px-2 text-gray-500 font-sans font-semibold ${
+                ref={servicosLinkRef}
+                className={`py-4 px-2 text-gray-500 font-sans font-semibold link ${
                   isActive('/servicos')
                     ? 'border-b-2 border-cor-primaria-light'
                     : 'border-b-2 border-transparent'
@@ -84,7 +100,8 @@ const Nav: React.FC = () => {
 
             <Link href='/destaque' legacyBehavior>
               <a
-                className={`py-4 px-2 text-gray-500 font-sans font-semibold ${
+                ref={destaqueLinkRef}
+                className={`py-4 px-2 text-gray-500 font-sans font-semibold link ${
                   isActive('/destaque')
                     ? 'border-b-2 border-cor-primaria-light'
                     : 'border-b-2 border-transparent'
@@ -96,7 +113,8 @@ const Nav: React.FC = () => {
 
             <Link href='/portfolio' legacyBehavior>
               <a
-                className={`py-4 px-2 text-gray-500 font-sans font-semibold ${
+                ref={portfolioLinkRef}
+                className={`py-4 px-2 text-gray-500 font-sans font-semibold link ${
                   isActive('/portfolio')
                     ? 'border-b-2 border-cor-primaria-light'
                     : 'border-b-2 border-transparent'
@@ -107,7 +125,8 @@ const Nav: React.FC = () => {
             </Link>
             <Link href='/contato' legacyBehavior>
               <a
-                className={`py-4 px-2 text-gray-500 font-sans font-semibold ${
+                ref={contatoLinkRef}
+                className={`py-4 px-2 text-gray-500 font-sans font-semibold link ${
                   isActive('/contato')
                     ? 'border-b-2 border-cor-primaria-light'
                     : 'border-b-2 border-transparent'

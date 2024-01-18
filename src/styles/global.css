@@ -9,8 +9,14 @@ $cor-texto: #323232;
 $cor-complementar: #fffff0;
 $sans: 'Poppins', sans-serif;
 
-.link-ativo {
+.link {
+  transition: border-color 0.9s ease;
   border-bottom: 2px solid transparent;
+}
+
+.link:hover {
+  border-color: #ed3237;
+  scale: 1.05;
 }
 
 .hover-link {

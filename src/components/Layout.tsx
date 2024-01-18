@@ -10,8 +10,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <>
       <Nav />
 
-      <div className=' '></div>
-      <div className=''></div>
       <main>{children}</main>
     </>
   );
