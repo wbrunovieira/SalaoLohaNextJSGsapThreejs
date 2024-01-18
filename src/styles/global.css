@@ -290,6 +290,19 @@ $sans: 'Poppins', sans-serif;
   }
 }
 
+.icon-zap {
+  width: 40px;
+  height: 140px;
+  padding-right: 10px;
+}
+
+.icon-coracao {
+  width: 40px;
+  height: 40px;
+  transform: translate(710%, -220%);
+  background: none !important;
+}
+
 @media screen and (max-width: 768px) {
   .mobile-menu-button {
     display: block;
