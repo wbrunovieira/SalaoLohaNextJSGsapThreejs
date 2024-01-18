@@ -16,8 +16,8 @@ $sans: 'Poppins', sans-serif;
 .hover-link {
   margin: 0 auto;
   border: none;
-  background: $cor-complementar;
-  color: #ed3237;
+  background: var(--cor-complementar);
+  color: var(--primary-red-light);
   border-bottom: solid 1px rgba($cor-fundo, 0.2);
   padding: 0.4rem 0.4rem 0.4rem;
   font-family: $sans;
