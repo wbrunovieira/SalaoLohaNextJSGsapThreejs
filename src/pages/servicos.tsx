@@ -1,7 +1,8 @@
+import ServicosComp from '@/components/ServicosComp';
 import React from 'react';
 
 const Servicos: React.FC = () => {
-  return <div>Servico</div>;
+  return <ServicosComp />;
 };
 
 export default Servicos;

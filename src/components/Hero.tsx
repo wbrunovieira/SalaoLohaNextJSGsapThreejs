@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
+
 import { TextPlugin } from 'gsap/TextPlugin';
 import { useIsomorphicLayoutEffect } from '../helpers/useIsomorphicEffect';
 
@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
     if (typeof window !== 'undefined') {
       gsap.to('html', {
         duration: 2,
-        backgroundImage: 'url(/svg/pattern-randomized.svg)',
+        backgroundColor: '#fff',
         backgroundSize: 'cover',
         ease: 'power1.in',
         opacity: 1,
