@@ -1,7 +1,12 @@
+import PortfolioComp from '@/components/PortfolioComp.jsx';
 import React from 'react';
 
 const Portfolio: React.FC = () => {
-  return <div>Portifolio</div>;
+  return (
+    <>
+      <PortfolioComp />
+    </>
+  );
 };
 
 export default Portfolio;

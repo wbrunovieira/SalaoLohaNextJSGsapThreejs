@@ -28,7 +28,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/components/ParticlesContainer.js",
-    "src/types/styles.d.ts"
+    "src/types/styles.d.ts",
+    "src/components/PortfolioComp.jsx"
   ],
   "exclude": ["node_modules"]
 }
