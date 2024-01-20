@@ -1,9 +1,107 @@
-import React from 'react';
+import { useRef, useEffect } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { TextPlugin } from 'gsap/TextPlugin';
+import { useIsomorphicLayoutEffect } from '../helpers/useIsomorphicEffect';
 
 const Hero: React.FC = () => {
+  const container = useRef();
+
+  useIsomorphicLayoutEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('gsap/TextPlugin').then((module) => {
+        gsap.registerPlugin(module.TextPlugin);
+      });
+    }
+
+    if (typeof window !== 'undefined') {
+      gsap.to('html', {
+        duration: 2,
+        backgroundImage: 'url(/svg/pattern-randomized.svg)',
+        backgroundSize: 'cover',
+        ease: 'power1.in',
+        opacity: 1,
+      });
+      var length = 0;
+
+      var path = document.querySelector('#borda-hero') as SVGPathElement;
+      if (path) {
+        var length = path.getTotalLength();
+      }
+
+      path.style.strokeDasharray = length.toString();
+      path.style.strokeDashoffset = length.toString();
+
+      gsap.to(path.style, {
+        delay: 1,
+        strokeDashoffset: 0,
+        duration: 2,
+        ease: 'back.inOut',
+      });
+
+      let tl = gsap.timeline();
+
+      tl.to('.imagem-reveal', {
+        clipPath: 'inset(0 0 0 0)',
+        duration: 1,
+        ease: 'elastic.out(1,0.3)',
+      });
+      tl.to('#text3', {
+        text: ' Espaço de Beleza e Bem-estar Integral',
+        ease: 'power1.in',
+        duration: 1,
+      });
+      tl.to('#text5', {
+        text: 'Aqui no Salão Loha oferecemos uma experiência acolhedora  com serviços  personalizados de beleza por profissionais qualificados e atualizados com as últimas tendências.',
+        ease: 'power4.in',
+        duration: 2,
+      });
+      tl.to('#text4', { text: 'Salão Loha ', ease: 'power1.in', duration: 1 });
+      tl.to('#text1', {
+        text: 'Atendimento personalizado ',
+        ease: 'power1.in',
+        duration: 1,
+      });
+      tl.to('#text2', {
+        text: 'Beleza atualizada ',
+        ease: 'power1.in',
+        duration: 1,
+      }).to('#text6', { text: 'Te esperamos', ease: 'power1.in', duration: 2 });
+
+      tl.to('#text6', { text: '', ease: 'reverse', duration: 2 }, '+=2');
+      tl.to('.hover-link', { scale: 1.1, ease: 'power1.in', duration: 0.5 });
+      tl.to('.hover-link', { scale: 1, ease: 'power1.in', duration: 1 });
+      tl.to(
+        '#coracao',
+        {
+          scale: 1.2,
+          skewX: 12,
+          skewY: 12,
+          rotateX: 10,
+          rotateY: 10,
+          translateZ: 20,
+          boxShadow: '10px 10px 20px rgba(0, 0, 0, 0.5)',
+          ease: 'power1.in',
+          duration: 1,
+        },
+        '-=1.5'
+      ).to('#coracao', {
+        scale: 1,
+        skewX: 0,
+        skewY: 0,
+        rotateX: 0,
+        rotateY: 0,
+        translateZ: 0,
+        boxShadow: 'none',
+        ease: 'power1.in',
+        duration: 1,
+      });
+    }
+  }, []);
+
   return (
     <>
-      <div data-barba='wrapper'>
+      <div>
         <a
           href='https://wa.me/+5511942124242'
           className='whatsapp-float'
@@ -25,11 +123,7 @@ const Hero: React.FC = () => {
           <i className='fab fa-whatsapp whatsapp-icon'></i>
         </a>
 
-        <main
-          data-barba='container'
-          data-barba-namespace='home'
-          className='flex flex-col md:flex-row max-w-6xl mx-auto px-4 altura-ajustada index'
-        >
+        <main className='flex flex-col md:flex-row max-w-6xl mx-auto px-4 altura-ajustada index'>
           <div className='flex flex-1 flex-col p-4 bg-cor-primaria'>
             <div className=' text-box relative flex flex-col justify-end items-end text-white font-sans'>
               <div className='text-align-left mt-10 overflow-visible'>
@@ -76,7 +170,7 @@ const Hero: React.FC = () => {
                       id='borda-hero'
                       d='M562 76.1293V7H7V809H561V739.871'
                       stroke='white'
-                      stroke-width='13'
+                      strokeWidth='13'
                     />
                   </svg>
                 </div>
@@ -90,7 +184,7 @@ const Hero: React.FC = () => {
                     area-label='Agende Agora'
                     cursor-type='button'
                   >
-                    <span area-hidden>
+                    <span className='area-hidden'>
                       <span>
                         Agende<span>Agende</span>{' '}
                       </span>
