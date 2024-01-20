@@ -7,30 +7,6 @@ const ServicosComp: React.FC = () => {
   const container = useRef(null);
   const text3Ref = useRef(null);
 
-  const cardData = [
-    {
-      title: 'Cabeleireiro',
-      description:
-        'Ir ao cabeleireiro é um ato de amor próprio. Nada como tirar um tempinho para cuidar da gente.',
-      image: '/img/produto1.jpg',
-      alt: 'Imagem 1',
-    },
-    {
-      title: 'Manicure',
-      description:
-        'Qual é a importância da manicure? Unhas limpas e bem cuidadas são sinônimos de higiene e auto cuidado.',
-      image: '/img/produto2.jpg',
-      alt: 'Imagem 2',
-    },
-    {
-      title: 'Terapia Capilar',
-      description:
-        'A terapia capilar é uma abordagem holística de cuidado com os cabelos...',
-      image: '/img/produto3.jpg',
-      alt: 'Imagem 3',
-    },
-  ];
-
   useIsomorphicLayoutEffect(() => {
     if (typeof window !== 'undefined') {
       import('gsap/TextPlugin').then((module) => {
@@ -47,11 +23,6 @@ const ServicosComp: React.FC = () => {
     });
 
     let tl = gsap.timeline();
-
-    tl.to(container.current, {
-      opacity: 1,
-      duration: 0.9,
-    });
     if (text3Ref.current) {
       tl.to(text3Ref.current, {
         text: ' Espaço de Beleza e Bem-estar Integral',
@@ -66,12 +37,16 @@ const ServicosComp: React.FC = () => {
       duration: 1.5,
     });
 
-    tl.from('.card', {
-      duration: 1,
+    tl.to(container.current, {
       opacity: 1,
-      y: 600,
+      duration: 0.9,
+    });
 
-      stagger: 0.2,
+    tl.from('.card', {
+      duration: 2,
+      opacity: 1,
+      y: 200,
+      stagger: 1,
       ease: 'power1.in',
       onStart: () => {
         document.querySelectorAll('.card-img').forEach((img) => {
@@ -136,28 +111,71 @@ const ServicosComp: React.FC = () => {
           </div>
         </div>
 
-        <div className='cards-container flex'>
-          {cardData.map((card, index) => (
-            <div key={index} className='px-2 mb-4 z-20'>
-              <div className='card card-tilt bg-white shadow-lg rounded-lg overflow-hidden p-4 w-72'>
-                <Image
-                  src={card.image}
-                  alt={card.alt}
-                  className='card-img w-full h-56'
-                  width={230}
-                  height={230}
-                />
-                <div className='card-body p-4'>
-                  <h2 className='card-title text-lg font-semibold'>
-                    {card.title}
-                  </h2>
-                  <p className='card-text text-gray-600 text-sm'>
-                    {card.description}
-                  </p>
-                </div>
+        <div ref={container} className='cards-container flex opacity-0'>
+          {/* Card 1 */}
+
+          <div className='px-2 mb-4 z-20'>
+            <div className='card card-tilt bg-white shadow-lg rounded-lg overflow-hidden p-4'>
+              <Image
+                src='/img/produto1.jpg'
+                alt='Imagem 1'
+                className='card-img w-full h-56 bg-cover'
+                width={230}
+                height={230}
+              />
+              <div className='card-body p-4'>
+                <h2 className='card-title text-lg font-semibold'>
+                  Cabeleireiro
+                </h2>
+                <p className='card-text text-gray-600 text-sm'>
+                  Ir ao cabeleireiro é um ato de amor próprio. Nada como tirar
+                  um tempinho para cuidar da gente.
+                </p>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Card 2 */}
+          <div className='w-full md:w-1/3 px-2 mb-4 z-20'>
+            <div className='card card-tilt bg-white shadow-lg rounded-lg overflow-hidden p-4'>
+              <Image
+                src='/img/produto2.jpg'
+                alt='Imagem 2'
+                className='card-img rounded-lg w-full h-56 bg-cover'
+                width={230}
+                height={230}
+              />
+              <div className='card-body p-4'>
+                <h2 className='card-title text-lg font-semibold'>Manicure</h2>
+                <p className='card-text text-gray-600 text-sm'>
+                  Qual é a importância da manicure? Unhas limpas e bem cuidadas
+                  são sinônimos de higiene e auto cuidado.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 3 */}
+          <div className='w-full md:w-1/3 px-2 mb-4 bg-cover z-20'>
+            <div className='card card-tilt bg-white shadow-lg rounded-lg overflow-hidden p-4'>
+              <Image
+                src='/img/produto3.jpg'
+                alt='Imagem 3'
+                className='card-img w-full h-56 object-cover'
+                width={230}
+                height={230}
+              />
+              <div className='card-body p-4'>
+                <h2 className='card-title text-lg font-semibold'>
+                  O que é terapia capilar
+                </h2>
+                <p className='card-text text-gray-600 text-sm'>
+                  A terapia capilar é uma abordagem holística de cuidado com os
+                  cabelos...
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </>
