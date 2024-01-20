@@ -1,7 +1,12 @@
+import DestaqueComp from '@/components/DestaqueComp';
 import React from 'react';
 
 const Destaque: React.FC = () => {
-  return <div>Destaque</div>;
+  return (
+    <>
+      <DestaqueComp />
+    </>
+  );
 };
 
 export default Destaque;

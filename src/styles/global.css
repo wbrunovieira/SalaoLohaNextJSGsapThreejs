@@ -289,14 +289,14 @@ $sans: 'Poppins', sans-serif;
     border-radius: 10px;
   }
 }
-/* 
-.cards-container {
-  opacity: 0;
-} */
 
 .icon {
   width: 40px;
   height: 140px;
+}
+.iconm {
+  width: 60px;
+  height: 60px;
 }
 
 .icon-zap {
