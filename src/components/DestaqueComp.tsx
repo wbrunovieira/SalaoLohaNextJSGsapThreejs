@@ -31,27 +31,6 @@ const DestaqueComp: React.FC = () => {
   return (
     <>
       <main className='bg-special'>
-        <a
-          href='https://wa.me/+5511942124242'
-          className='whatsapp-float'
-          target='_blank'
-        >
-          <div className='whatsapp-message-box d-none d-md-flex'>
-            <lord-icon
-              src='https://cdn.lordicon.com/kiynvdns.json'
-              trigger='hover'
-              className='con-zap'
-              stroke='light'
-              colors='primary:#121331,secondary:#f28ba8,tertiary:#ffc738,quaternary:#30e849,quinary:#ebe6ef'
-            ></lord-icon>
-            <div className='whatsapp-text'>
-              <p>Oi !</p>
-              <p>Podemos te ajudar? </p>
-            </div>
-          </div>
-          <i className='fab fa-whatsapp whatsapp-icon'></i>
-        </a>
-
         <main className='flex max-w-6xl mx-auto px-4 index-destaque destaque mb-10 font-sans w-full'>
           <div className='flex mb-6 flex-col sm:flex-row pr-4 bg-cor-primaria'>
             <div className='flex-1 justify-center items-center p-4'>

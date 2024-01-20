@@ -102,27 +102,6 @@ const Hero: React.FC = () => {
   return (
     <>
       <div>
-        <a
-          href='https://wa.me/+5511942124242'
-          className='whatsapp-float'
-          target='_blank'
-        >
-          <div className='whatsapp-message-box d-none d-md-flex '>
-            <lord-icon
-              src='https://cdn.lordicon.com/kiynvdns.json'
-              trigger='hover'
-              stroke='light'
-              colors='primary:#121331,secondary:#f28ba8,tertiary:#ffc738,quaternary:#30e849,quinary:#ebe6ef'
-              className='z-20 icon-zap'
-            ></lord-icon>
-            <div className='whatsapp-text'>
-              <p className=''>Oi !</p>
-              <p className=''>Podemos te ajudar? </p>
-            </div>
-          </div>
-          <i className='fab fa-whatsapp whatsapp-icon'></i>
-        </a>
-
         <main className='flex flex-col md:flex-row max-w-6xl mx-auto px-4 altura-ajustada index'>
           <div className='flex flex-1 flex-col p-4 bg-cor-primaria'>
             <div className=' text-box relative flex flex-col justify-end items-end text-white font-sans'>
