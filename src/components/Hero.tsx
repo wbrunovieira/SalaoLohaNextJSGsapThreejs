@@ -179,15 +179,18 @@ const Hero: React.FC = () => {
 
                 <div className='ml-9 mt-1 font-semibold button-container'>
                   <button
-                    // onClick="window.open('https://wa.me/5511942124242', '_blank')"
-                    className='rounded-lg pl-12 botao hover-link cursor-pointer z-20'
-                    area-label='Agende Agora'
+                    onClick={() =>
+                      window.open('https://wa.me/5511942124242', '_blank')
+                    }
+                    className='rounded-lg pl-12 botao hover-link cursor-pointer z-20 bg-cor-fundo text-cor-primaria-light'
+                    area-label='Agende  Agora'
                     cursor-type='button'
                   >
-                    <span className='area-hidden'>
+                    <span aria-hidden='true'>
                       <span>
                         Agende<span>Agende</span>{' '}
                       </span>
+                      &nbsp;
                       <span>
                         agora<span>agora</span>{' '}
                       </span>
