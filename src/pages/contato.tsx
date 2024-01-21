@@ -1,7 +1,8 @@
+import ContatoComp from '@/components/ContatoComp';
 import React from 'react';
 
 const Contato: React.FC = () => {
-  return <div>Contato</div>;
+  return <ContatoComp />;
 };
 
 export default Contato;

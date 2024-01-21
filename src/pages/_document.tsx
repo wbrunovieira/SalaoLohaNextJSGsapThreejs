@@ -15,6 +15,7 @@ class MyDocument extends Document {
             href='https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;800;900&display=swap'
             rel='stylesheet'
           />
+
           <script src='https://cdn.lordicon.com/lordicon.js' async />
         </Head>
         <body>
