@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import gsap from 'gsap';
 
 import { TextPlugin } from 'gsap/TextPlugin';
@@ -56,7 +56,11 @@ const Hero: React.FC = () => {
         ease: 'power4.in',
         duration: 2,
       });
-      tl.to('#text4', { text: 'Salão Loha ', ease: 'power1.in', duration: 1 });
+      tl.to('#text4', {
+        text: 'Salão Loha ',
+        ease: 'power1.in',
+        duration: 1,
+      });
       tl.to('#text1', {
         text: 'Atendimento personalizado ',
         ease: 'power1.in',
@@ -66,7 +70,11 @@ const Hero: React.FC = () => {
         text: 'Beleza atualizada ',
         ease: 'power1.in',
         duration: 1,
-      }).to('#text6', { text: 'Te esperamos', ease: 'power1.in', duration: 2 });
+      }).to('#text6', {
+        text: 'Te esperamos',
+        ease: 'power1.in',
+        duration: 2,
+      });
 
       tl.to('#text6', { text: '', ease: 'reverse', duration: 2 }, '+=2');
       tl.to('.hover-link', { scale: 1.1, ease: 'power1.in', duration: 0.5 });

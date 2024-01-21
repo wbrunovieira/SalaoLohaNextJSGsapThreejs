@@ -273,7 +273,7 @@ $sans: 'Poppins', sans-serif;
 .bar-loading {
   width: 500px;
   height: 6px;
-  background-color: rgba($color: $prymary-red, $alpha: 0.2);
+  background-color: rgba(#000000, 0.2);
   border-radius: 10px;
   position: relative;
   --bar-width: 0%;
