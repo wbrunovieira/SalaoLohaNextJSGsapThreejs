@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
+import { animateTransition } from '../utils/animateTransition';
 
 import { useIsomorphicLayoutEffect } from '../helpers/useIsomorphicEffect';
 
@@ -19,6 +20,7 @@ const PortfolioComp = () => {
       ease: 'power1.in',
       opacity: 1,
     });
+    animateTransition(true);
 
     function randomBetween(min, max) {
       return Math.random() * (max - min) + min;
@@ -181,6 +183,7 @@ const PortfolioComp = () => {
   }, []);
   return (
     <>
+      <div className='transitions'></div>
       <div className='h-full'>
         <main className='max-w-6xl mx-auto px-4 font-sans z-20'>
           <div className='flex mt-4 gap-3 font-sans text-3xl font-semibold'>

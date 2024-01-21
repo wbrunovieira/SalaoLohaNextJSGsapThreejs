@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 import gsap from 'gsap';
+import { animateTransition } from '../utils/animateTransition';
 import { useIsomorphicLayoutEffect } from '../helpers/useIsomorphicEffect';
 
 const DestaqueComp: React.FC = () => {
@@ -15,6 +16,7 @@ const DestaqueComp: React.FC = () => {
     gsap.to('.destaque', { duration: 0.5, opacity: 0.5 });
     gsap.to('.destaque', { duration: 0.5, opacity: 1 });
     setSpecialBg(!specialBg);
+    animateTransition(true);
 
     let tl = gsap.timeline();
     tl.to('#text1', { text: ' Saúde é tudo', ease: 'power1.in', duration: 1 });
@@ -25,6 +27,7 @@ const DestaqueComp: React.FC = () => {
   }, []);
   return (
     <>
+      <div className='transitions'></div>
       <main className='bg-special'>
         <main className='flex max-w-6xl mx-auto px-4 index-destaque destaque mb-10 font-sans w-full'>
           <div className='flex mb-6 flex-col sm:flex-row pr-4 bg-cor-primaria'>

@@ -11,7 +11,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <>
       <Nav />
       <Whatsapp />
-
+      <div className='transitions'></div>
       <main>{children}</main>
     </>
   );
