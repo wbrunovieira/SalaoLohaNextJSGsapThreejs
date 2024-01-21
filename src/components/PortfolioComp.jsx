@@ -2,7 +2,6 @@ import Image from 'next/image';
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 
-import { Gradient } from '../utils/Gradient';
 import { useIsomorphicLayoutEffect } from '../helpers/useIsomorphicEffect';
 
 const PortfolioComp = () => {
@@ -12,11 +11,12 @@ const PortfolioComp = () => {
         gsap.registerPlugin(module.TextPlugin);
       });
     }
-    const gradient = new Gradient();
-    gradient.initGradient('#gradient-canvas');
 
     gsap.to('html', {
       duration: 2,
+      backgroundImage: 'url(/svg/diamond-sunset.svg)',
+      backgroundSize: 'cover',
+      ease: 'power1.in',
       opacity: 1,
     });
 
@@ -179,8 +179,6 @@ const PortfolioComp = () => {
     <>
       <div className='h-full'>
         <main className='max-w-6xl mx-auto px-4 font-sans z-20'>
-          <canvas id='gradient-canvas' data-transition-in></canvas>
-
           <div className='flex mt-4 gap-3 font-sans text-3xl font-semibold'>
             <lord-icon
               src='https://cdn.lordicon.com/bmlkvhui.json'
