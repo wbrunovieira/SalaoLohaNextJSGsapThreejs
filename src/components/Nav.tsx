@@ -6,8 +6,35 @@ import { useRouter } from 'next/router';
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { useIsomorphicLayoutEffect } from '../helpers/useIsomorphicEffect';
 
 const Nav: React.FC = () => {
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useIsomorphicLayoutEffect(() => {
+    const menuButton = document.getElementById('menu-button');
+
+    // Função de manipulação do clique
+    const toggleMenu = () => {
+      if (menuRef.current && menuRef.current.classList.contains('responsive')) {
+        menuRef.current.classList.remove('responsive');
+      } else {
+        menuRef.current?.classList.add('responsive');
+      }
+    };
+
+    // Adicionando o event listener, se o menuButton existir
+    if (menuButton) {
+      menuButton.addEventListener('click', toggleMenu);
+    }
+
+    // Cleanup function para remover o event listener
+    return () => {
+      if (menuButton) {
+        menuButton.removeEventListener('click', toggleMenu);
+      }
+    };
+  }, []);
   const router = useRouter();
 
   const isActive = (pathname: string) => {
@@ -26,7 +53,7 @@ const Nav: React.FC = () => {
     <nav className='bg-white shadow-lg relative '>
       <div className='max-w-6xl mx-auto px-4'>
         <div className='flex justify-between'>
-          <div className='md:hidden flex items-center'>
+          <div ref={menuRef} className='md:hidden flex items-center'>
             <button
               id='menu-button'
               className='outline-none mobile-menu-button z-20'
