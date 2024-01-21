@@ -312,35 +312,32 @@ $sans: 'Poppins', sans-serif;
   background: none !important;
 }
 
-@media screen and (max-width: 768px) {
-  .mobile-menu-button {
-    display: block;
-  }
+.responsive {
+  display: flex;
+  opacity: 0.7;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
 
+@media screen and (max-width: 768px) {
   .menu {
     display: none;
   }
 
-  .menu.responsive {
+  .responsive {
     display: block;
-    position: absolute;
-    width: 30%;
-    opacity: 0.7;
-    top: 80px;
-    left: 0;
-    z-index: 20;
-    background-color: #fff; /* ou qualquer outra cor de fundo que você preferir */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
 
-  .menu.responsive a {
+  .responsive a {
     display: block;
     text-align: left;
     padding: 10px 20px;
-    color: black; /* ou qualquer outra cor de texto que você preferir */
-  }
-
-  .text-destaque {
-    margin-left: 1rem;
+    color: #ed3237;
+    font-size: 12px;
   }
 }
