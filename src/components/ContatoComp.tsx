@@ -5,22 +5,14 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const ContatoComp: React.FC = () => {
   useIsomorphicLayoutEffect(() => {
-    if (typeof window !== 'undefined') {
-      import('gsap/TextPlugin').then((module) => {
-        gsap.registerPlugin(module.TextPlugin);
-      });
-      gsap.to(
-        'html',
+    gsap.to('html', {
+      duration: 2,
+      delay: 1,
+      backgroundColor: 'white',
 
-        {
-          duration: 2,
-          backgroundColor: 'white',
-          backgroundSize: 'cover',
-          ease: 'power1.in',
-          opacity: 0.9,
-        }
-      );
-    }
+      ease: 'power1.in',
+      opacity: 0.9,
+    });
   }, []);
 
   return (

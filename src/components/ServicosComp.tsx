@@ -2,8 +2,11 @@ import Image from 'next/image';
 import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useIsomorphicLayoutEffect } from '../helpers/useIsomorphicEffect';
+import useBackgroundStore from '@/utils/useBackgroundStore';
 
 const ServicosComp: React.FC = () => {
+  const setBackground = useBackgroundStore((state) => state.setBackground);
+
   const container = useRef(null);
   const text3Ref = useRef(null);
 
@@ -37,15 +40,15 @@ const ServicosComp: React.FC = () => {
         gsap.registerPlugin(module.TextPlugin);
       });
     }
-
     gsap.to('html', {
       duration: 2,
+      delay: 1,
       backgroundImage: 'url(/svg/pattern-randomized.svg)',
-      backgroundSize: 'cover',
-      ease: 'power1.in',
-      opacity: 1,
-    });
 
+      ease: 'power1.in',
+      opacity: 0.9,
+    });
+    setBackground('url(/svg/pattern-randomized.svg)');
     let tl = gsap.timeline();
 
     tl.to(container.current, {
@@ -107,6 +110,7 @@ const ServicosComp: React.FC = () => {
         });
       },
     });
+    return () => setBackground('url(/svg/abstract-timekeeper.svg)');
   }, []);
   return (
     <>

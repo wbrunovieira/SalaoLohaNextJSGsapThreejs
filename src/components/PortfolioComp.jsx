@@ -78,9 +78,6 @@ const PortfolioComp = () => {
         amount: 0.15,
       },
       delay: 3,
-      onComplete: () => {
-        document.querySelector('.header').remove();
-      },
     });
 
     function scatterAndShrink() {
@@ -174,6 +171,13 @@ const PortfolioComp = () => {
       const rotation = randomBetween(-10, 10);
       gsap.to(img, { rotation: rotation, duration: 0 });
     });
+    return () => {
+      gsap.to('html', {
+        duration: 1,
+        backgroundImage: 'none',
+        ease: 'power1.in',
+      });
+    };
   }, []);
   return (
     <>
@@ -187,15 +191,15 @@ const PortfolioComp = () => {
               colors='primary:#121331,secondary:#3a3347,tertiary:#e83a30,quaternary:#ebe6ef,quinary:#e83a30,senary:#911710,septenary:#f24c00'
             ></lord-icon>
 
-            <h3 className=''>Galeria de Fotos</h3>
+            <h3 className='text-white'>Galeria de Fotos</h3>
           </div>
 
           <div className='header'>
-            <div className='text'>
-              <p>conheca</p>
+            <div className='text-white'>
+              <p>conheça</p>
               <div className='text-revealer'></div>
             </div>
-            <div className='text'>
+            <div className='text-white'>
               <p>um pouco mais o nosso espaço</p>
               <div className='text-revealer'></div>
             </div>

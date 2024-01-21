@@ -12,14 +12,6 @@ const DestaqueComp: React.FC = () => {
       });
     }
 
-    gsap.to('html', {
-      duration: 2,
-      backgroundColor: 'white',
-      backgroundSize: 'cover',
-      ease: 'power1.in',
-      opacity: 1,
-    });
-
     gsap.to('.destaque', { duration: 0.5, opacity: 0.5 });
     gsap.to('.destaque', { duration: 0.5, opacity: 1 });
     setSpecialBg(!specialBg);
@@ -27,6 +19,9 @@ const DestaqueComp: React.FC = () => {
     let tl = gsap.timeline();
     tl.to('#text1', { text: ' Saúde é tudo', ease: 'power1.in', duration: 1 });
     tl.to('#text1', { text: ' ', ease: 'power1.in', delay: 1, duration: 1 });
+    return () => {
+      setSpecialBg(false);
+    };
   }, []);
   return (
     <>
