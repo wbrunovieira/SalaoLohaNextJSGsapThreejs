@@ -2,8 +2,11 @@ import Image from 'next/image';
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 const Nav: React.FC = () => {
+  const menuRef = useRef<HTMLDivElement>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
 
@@ -14,6 +17,14 @@ const Nav: React.FC = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const homeLinkRef = useRef<HTMLAnchorElement>(null);
+  const servicosLinkRef = useRef<HTMLAnchorElement>(null);
+  const contatoLinkRef = useRef<HTMLAnchorElement>(null);
+  const destaqueLinkRef = useRef<HTMLAnchorElement>(null);
+  const portfolioLinkRef = useRef<HTMLAnchorElement>(null);
+
+  const { contextSafe } = useGSAP({});
 
   return (
     <nav className='bg-white shadow-lg relative'>
@@ -69,30 +80,65 @@ const Nav: React.FC = () => {
             }`}
           >
             <Link href='/' legacyBehavior>
-              <a className='py-4 px-2 text-gray-500 font-sans font-semibold link'>
+              <a
+                ref={homeLinkRef}
+                className={`py-4 px-2 text-gray-500 font-sans font-semibold link ${
+                  isActive('/')
+                    ? 'border-b-2 border-cor-primaria-light'
+                    : 'border-b-2 border-transparent'
+                }`}
+              >
                 Início
               </a>
             </Link>
 
             <Link href='/servicos' legacyBehavior>
-              <a className='py-4 px-2 text-gray-500 font-sans font-semibold link'>
+              <a
+                ref={servicosLinkRef}
+                className={`py-4 px-2 text-gray-500 font-sans font-semibold link ${
+                  isActive('/servicos')
+                    ? 'border-b-2 border-cor-primaria-light'
+                    : 'border-b-2 border-transparent'
+                }`}
+              >
                 Serviços
               </a>
             </Link>
 
             <Link href='/destaque' legacyBehavior>
-              <a className='py-4 px-2 text-gray-500 font-sans font-semibold link'>
+              <a
+                ref={destaqueLinkRef}
+                className={`py-4 px-2 text-gray-500 font-sans font-semibold link ${
+                  isActive('/destaque')
+                    ? 'border-b-2 border-cor-primaria-light'
+                    : 'border-b-2 border-transparent'
+                }`}
+              >
                 Destaque
               </a>
             </Link>
 
             <Link href='/portfolio' legacyBehavior>
-              <a className='py-4 px-2 text-gray-500 font-sans font-semibold link'>
+              <a
+                ref={portfolioLinkRef}
+                className={`py-4 px-2 text-gray-500 font-sans font-semibold link ${
+                  isActive('/destaque')
+                    ? 'border-b-2 border-cor-primaria-light'
+                    : 'border-b-2 border-transparent'
+                }`}
+              >
                 Portfólio
               </a>
             </Link>
             <Link href='/contato' legacyBehavior>
-              <a className='py-4 px-2 text-gray-500 font-sans font-semibold link'>
+              <a
+                ref={contatoLinkRef}
+                className={`py-4 px-2 text-gray-500 font-sans font-semibold link ${
+                  isActive('/destaque')
+                    ? 'border-b-2 border-cor-primaria-light'
+                    : 'border-b-2 border-transparent'
+                }`}
+              >
                 Contato
               </a>
             </Link>
