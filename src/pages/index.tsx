@@ -4,14 +4,19 @@ import LoadingScreen from '../components/LoadingScreen';
 import { useIsomorphicLayoutEffect } from '../helpers/useIsomorphicEffect';
 
 function Index() {
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
-  useIsomorphicLayoutEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-  }, []);
-  return <div>{isLoading ? <LoadingScreen /> : <Home />}</div>;
+  // useIsomorphicLayoutEffect(() => {
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 1000);
+  // }, []);
+  // return <div>{isLoading ? <LoadingScreen /> : <Home />}</div>;
+  return (
+    <>
+      <Home />
+    </>
+  );
 }
 
 export default Index;
