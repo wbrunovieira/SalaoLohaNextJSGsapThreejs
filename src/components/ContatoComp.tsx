@@ -28,12 +28,11 @@ const ContatoComp: React.FC = () => {
             atendimento é uma experiência personalizada e exclusiva. Com
             profissionais altamente qualificados e atualizados com as últimas
             tendências da beleza, nos dedicamos a proporcionar resultados
-            excepcionais em todos os serviços. Seja revitalizando o cabelo,
-            cuidando das unhas, ou transformando o olhar com nossas terapias
-            capilares e tratamentos de sobrancelhas, no Salão Loha você descobre
-            a beleza em sua essência. Aqui, a beleza e bem-estar caminham de
-            mãos dadas. Agende sua visita e sinta a diferença de um cuidado que
-            vai além da estética
+            excepcionais em todos os serviços. Seja o cabelo revitalizado,
+            cuidando das unhas, ou transformando o olhar com design de
+            sobrancelhas, no Salão Loha você descobre a beleza em sua essência.
+            Aqui, a beleza e bem-estar caminham de mãos dadas. Agende sua visita
+            e sinta a diferença de um cuidado que vai além da estética
           </p>
 
           <h2 className='text-lg text-cor-texto font-semibold mb-7 pt-7'>
