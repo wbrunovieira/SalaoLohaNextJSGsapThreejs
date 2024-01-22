@@ -6,23 +6,28 @@ import { useIsomorphicLayoutEffect } from '../helpers/useIsomorphicEffect';
 
 const DestaqueComp: React.FC = () => {
   const [specialBg, setSpecialBg] = useState(false);
+  if (typeof window !== 'undefined') {
+    import('gsap/TextPlugin').then((module) => {
+      gsap.registerPlugin(module.TextPlugin);
+    });
+  }
   useIsomorphicLayoutEffect(() => {
-    if (typeof window !== 'undefined') {
-      import('gsap/TextPlugin').then((module) => {
-        gsap.registerPlugin(module.TextPlugin);
-      });
-    }
-
     gsap.to('.destaque', { duration: 0.5, opacity: 0.5 });
     gsap.to('.destaque', { duration: 0.5, opacity: 1 });
     setSpecialBg(!specialBg);
     animateTransition(true);
 
     let tl = gsap.timeline();
-    tl.to('#text1', { text: ' Saúde é tudo', ease: 'power1.in', duration: 1 });
+    tl.to('#text1', {
+      text: ' Saúde é tudo',
+      delay: 2,
+      ease: 'power1.in',
+      duration: 1,
+    });
     tl.to('#text1', { text: ' ', ease: 'power1.in', delay: 1, duration: 1 });
     return () => {
       setSpecialBg(false);
+      animateTransition(false);
     };
   }, []);
   return (
