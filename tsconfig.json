@@ -29,7 +29,7 @@
     ".next/types/**/*.ts",
     "src/components/ParticlesContainer.js",
     "src/types/styles.d.ts",
-    "src/components/PortfolioComp.jsx"
+    "src/components/PortfolioCompOld.jsx"
   ],
   "exclude": ["node_modules"]
 }
