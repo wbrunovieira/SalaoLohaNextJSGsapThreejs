@@ -28,9 +28,16 @@ const ServicosComp: React.FC = () => {
     {
       title: 'Terapia Capilar',
       description:
-        'A terapia capilar é uma abordagem holística de cuidado com os cabelos...',
+        'A terapia capilar é uma abordagem holística de cuidado com os cabelos.',
       image: '/img/produto3.jpg',
       alt: 'Imagem 3',
+    },
+    {
+      title: 'Depilação',
+      description:
+        'Além de promover uma pele mais lisa e suave, essa prática realça a beleza e contribui para uma sensação de frescor e conforto.',
+      image: '/img/produto4.jpg',
+      alt: 'Imagem 4',
     },
   ];
 
@@ -142,24 +149,27 @@ const ServicosComp: React.FC = () => {
 
         <div className='cards-container flex'>
           {cardData.map((card, index) => (
-            <div key={index} className='px-2 mb-4 z-20'>
-              <div className='card card-tilt bg-white shadow-lg rounded-lg overflow-hidden p-4 w-72'>
-                <Image
-                  src={card.image}
-                  alt={card.alt}
-                  className='card-img w-full h-56'
-                  width={230}
-                  height={230}
-                />
-                <div className='card-body p-4'>
-                  <h2 className='card-title text-lg font-semibold'>
-                    {card.title}
-                  </h2>
-                  <p className='card-text text-gray-600 text-sm'>
-                    {card.description}
-                  </p>
-                </div>
+            <div
+              key={index}
+              className='px-8 mb-4 card card-tilt bg-white shadow-lg rounded-lg overflow-hidden p-4 w-72'
+            >
+              {/* <div className='card card-tilt bg-white shadow-lg rounded-lg overflow-hidden p-4 w-72'> */}
+              <Image
+                src={card.image}
+                alt={card.alt}
+                className='card-img w-full h-56'
+                width={230}
+                height={230}
+              />
+              <div className='card-body p-4'>
+                <h2 className='card-title text-lg font-semibold'>
+                  {card.title}
+                </h2>
+                <p className='card-text text-gray-600 text-sm'>
+                  {card.description}
+                </p>
               </div>
+              {/* </div> */}
             </div>
           ))}
         </div>
