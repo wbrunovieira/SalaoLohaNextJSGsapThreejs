@@ -122,7 +122,7 @@ const Nav: React.FC = () => {
               <a
                 ref={portfolioLinkRef}
                 className={`py-4 px-2 text-gray-500 font-sans font-semibold link ${
-                  isActive('/destaque')
+                  isActive('/portfolio')
                     ? 'border-b-2 border-cor-primaria-light'
                     : 'border-b-2 border-transparent'
                 }`}
@@ -134,7 +134,7 @@ const Nav: React.FC = () => {
               <a
                 ref={contatoLinkRef}
                 className={`py-4 px-2 text-gray-500 font-sans font-semibold link ${
-                  isActive('/destaque')
+                  isActive('/contato')
                     ? 'border-b-2 border-cor-primaria-light'
                     : 'border-b-2 border-transparent'
                 }`}
