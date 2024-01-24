@@ -9,6 +9,11 @@ $cor-texto: #323232;
 $cor-complementar: #fffff0;
 $sans: 'Poppins', sans-serif;
 
+html {
+  opacity: 0;
+  display: hidden;
+}
+
 .link {
   transition: border-color 0.9s ease;
   border-bottom: 2px solid transparent;

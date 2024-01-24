@@ -1,15 +1,19 @@
 import React from 'react';
 import { useIsomorphicLayoutEffect } from '../helpers/useIsomorphicEffect';
 import gsap from 'gsap';
+import { animateTransition } from '../utils/animateTransition';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { block } from 'sharp';
 
 const ContatoComp: React.FC = () => {
   useIsomorphicLayoutEffect(() => {
+    animateTransition(true);
+
     gsap.to('html', {
       duration: 2,
       delay: 1,
       backgroundColor: 'white',
-
+      visibility: 1,
       ease: 'power1.in',
       opacity: 0.9,
     });

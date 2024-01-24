@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useIsomorphicLayoutEffect } from '../helpers/useIsomorphicEffect';
+import { animateTransition } from '../utils/animateTransition';
 import useBackgroundStore from '@/utils/useBackgroundStore';
 
 const ServicosComp: React.FC = () => {
@@ -47,6 +48,7 @@ const ServicosComp: React.FC = () => {
         gsap.registerPlugin(module.TextPlugin);
       });
     }
+    animateTransition(true);
     gsap.to('html', {
       duration: 2,
       delay: 1,

@@ -1,7 +1,7 @@
 import { gsap } from 'gsap';
 
 export function animateTransition(start: boolean) {
-  const tl = gsap.timeline({ paused: true });
+  const tl = gsap.timeline();
 
   tl.to('.transitions', {
     duration: 1,
@@ -13,7 +13,7 @@ export function animateTransition(start: boolean) {
     scaleY: 0,
     transformOrigin: 'bottom',
     ease: 'power1.inOut',
-    delay: 1, // Delay antes de reverter a animação
+    delay: 1,
   });
 
   if (start) {

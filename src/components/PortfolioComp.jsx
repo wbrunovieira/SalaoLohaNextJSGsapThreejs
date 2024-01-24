@@ -13,6 +13,7 @@ const PortfolioGrid = () => {
         gsap.registerPlugin(module.TextPlugin);
       });
     }
+    animateTransition(true);
 
     gsap.to('html', {
       duration: 2,
@@ -21,7 +22,6 @@ const PortfolioGrid = () => {
       ease: 'power1.in',
       opacity: 1,
     });
-    animateTransition(true);
 
     gsap.to('p', {
       top: '40px',
