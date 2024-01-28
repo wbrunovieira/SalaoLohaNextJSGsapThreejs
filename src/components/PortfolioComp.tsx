@@ -7,15 +7,15 @@ import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/styles.css';
 import { useIsomorphicLayoutEffect } from '../helpers/useIsomorphicEffect';
 
-import image1 from '/img/gallery/img1.jpg';
-import image2 from '/img/gallery/img2.jpg';
-import image3 from '/img/gallery/img3.jpg';
-import image4 from '/img/gallery/img4.jpg';
-import image5 from '/img/gallery/img5.jpg';
-import image6 from '/img/gallery/img6.jpg';
-import image7 from '/img/gallery/img7.jpg';
-import image8 from '/img/gallery/img8.jpg';
-import image9 from '/img/gallery/img9.jpg';
+import image1 from '../../public/img/gallery/img1.jpg';
+import image2 from '../../public/img/gallery/img2.jpg';
+import image3 from '../../public/img/gallery/img3.jpg';
+import image4 from '../../public/img/gallery/img4.jpg';
+import image5 from '../../public/img/gallery/img5.jpg';
+import image6 from '../../public/img/gallery/img6.jpg';
+import image7 from '../../public/img/gallery/img7.jpg';
+import image8 from '../../public/img/gallery/img8.jpg';
+import image9 from '../../public/img/gallery/img9.jpg';
 
 const images = [
   image1,

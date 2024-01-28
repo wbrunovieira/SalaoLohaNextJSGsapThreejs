@@ -1,10 +1,11 @@
-import PortfolioComp from '@/components/PortfolioComp';
 import React from 'react';
+
+import MyPhotoAlbum from '../components/MyPhotoAlbum';
 
 const Portfolio: React.FC = () => {
   return (
     <>
-      <PortfolioComp />
+      <MyPhotoAlbum />
     </>
   );
 };
