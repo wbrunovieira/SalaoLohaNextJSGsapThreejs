@@ -16,6 +16,8 @@ import image6 from '../assets/img/img6.jpg';
 import image7 from '../assets/img/img7.jpg';
 import image8 from '../assets/img/img8.jpg';
 import image9 from '../assets/img/img9.jpg';
+import photos from '@/utils/photos';
+import Image from 'next/image';
 
 const slides = [
   image1,
@@ -28,6 +30,7 @@ const slides = [
   image8,
   image9,
 ];
+
 const Portfolio: React.FC = () => {
   const [open, setOpen] = React.useState(false);
   return (
@@ -42,6 +45,18 @@ const Portfolio: React.FC = () => {
         slides={slides}
         render={{ slide: NextJsImage }}
       />
+
+      <div>
+        {photos.map((photo) => (
+          <Image
+            key={photo.src}
+            src={photo.src}
+            alt=''
+            width={photo.width}
+            height={photo.height}
+          />
+        ))}
+      </div>
     </>
   );
 };
