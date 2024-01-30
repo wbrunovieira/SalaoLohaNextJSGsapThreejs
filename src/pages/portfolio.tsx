@@ -33,19 +33,20 @@ const slides = [
 
 const Portfolio: React.FC = () => {
   const [open, setOpen] = React.useState(false);
+  const [selectedImage, setSelectedImage] = React.useState<any | null>(null);
   return (
     <>
-      <button type='button' onClick={() => setOpen(true)}>
-        Open Lightbox
-      </button>
-
-      <Lightbox
-        open={open}
-        close={() => setOpen(false)}
-        slides={slides}
-        render={{ slide: NextJsImage }}
-      />
-
+      {open && selectedImage && (
+        <Lightbox
+          open={open}
+          close={() => {
+            setOpen(false);
+            setSelectedImage(null);
+          }}
+          render={{ slide: NextJsImage }}
+          slides={[selectedImage]}
+        />
+      )}
       <div>
         {photos.map((photo) => (
           <Image
@@ -54,6 +55,10 @@ const Portfolio: React.FC = () => {
             alt=''
             width={photo.width}
             height={photo.height}
+            onClick={() => {
+              setSelectedImage(photo.src);
+              setOpen(true);
+            }}
           />
         ))}
       </div>
