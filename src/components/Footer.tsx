@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className='mt-10 w-screen h-auto bg-slate-400 text-white p-1 font-sans tracking-wider'>
+    <footer className='mt-10 w-screen h-auto bg-gradient-to-b from-gray-400 to-gray-500 text-white p-1 font-sans tracking-wider'>
       <div className='p-2 text-[8px] flex  items-center  border-b-1 justify-between mx-auto container px-10'>
         <p className='border-b-1 pb-2'>
           Desenvolvido pela
